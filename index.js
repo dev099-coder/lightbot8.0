@@ -151,7 +151,7 @@ async function starts() {
 					ownerB: '[❗] Este comando só pode ser usado pelo bot proprietário! ❌',
 					admin: '[❗] Este comando só pode ser usado por administradores de grupo! ❌',
 					Badmin: '[❗] Este comando só pode ser usado quando o bot se torna administrador! ❌',
-                                        daftarB: `──「 LISTA 」──\nOlá como !\nVocê não está registrado no banco de dados, \n\nComando : ${prefix}daftar nome|era\nExemplo : ${prefix}daftar gabriel|17`,
+                                        daftarB: `──「 LISTA 」──\nOlá como !\nVocê não está registrado no banco de dados, \n\nComando : ${prefix}cadastro nome|era\nExemplo : ${prefix}cadastro gabriel|17`,
 				}
 			}
     			const apakah = ['Ya','Tidak']
@@ -1148,7 +1148,7 @@ async function starts() {
 					client.sendMessage(from, anu.result.soal, text, { quoted: mek }) // ur cods
 					}, 0) // 1000 = 1s,
 					break
-                                  case 'daftar':
+                                  case 'cadastro':
 					client.updatePresence(from, Presence.composing)
 					if (isUser) return reply('você já está registrado')
 					if (args.length < 1) return reply(`Parameter Salah\nCommand : ${prefix}daftar nama|umur\nContoh : ${prefix}daftar Caliph|12`)
