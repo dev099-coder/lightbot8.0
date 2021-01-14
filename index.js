@@ -1357,6 +1357,30 @@ async function starts() {
 						reply('Só uma foto mano')
 					}
 					break
+case 'simi':
+					if (args.length < 1) return reply('Onde está o texto, Acha que sou vidente?😤')
+					teks = body.slice(5)
+					anu = await simih(teks) //fetchJson(`http://simsumi.herokuapp.com/api?text=${teks}`, {method: 'get'})
+					//if (anu.error) return reply('*Simi não sabe*')
+					reply(anu)
+					break
+				case 'simih':
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (args.length < 1) return reply('*Deseja ativar ou desativar?*')
+					if (Number(args[0]) === 1) {
+						if (isSimi) return reply('*O modo simi já está ativado*')
+						samih.push(from)
+						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
+						reply('*O modo simi foi ativado...*')
+					} else if (Number(args[0]) === 0) {
+						samih.splice(from, 1)
+						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
+						reply('*Simi está desativado com sucesso*')
+					} else {
+						reply('*.simih 1 para ativar, e .simih 0 para desativar*')
+					}
+					break
 				default:
 
    				         if (body.startsWith(`${prefix}${command}`)) {
