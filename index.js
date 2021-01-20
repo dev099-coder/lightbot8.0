@@ -705,12 +705,6 @@ async function starts() {
 					}
 					reply('╔══✪〘 Mention All 〙✪══\n╠➥'+teks+'╚═〘 BOCCHIBOT 〙')
 					break
-				case 'send':
-					var pc = body.slice(6)
-					var nomor = pc.split("|")[0];
-					var pesan = pc.split("|")[1];
-					client.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
-					break
 					case 'quotesnime':
 					nimek = await fetchJson('https://animechanapi.xyz/api/quotes/random')
 					hasil = `anime : ${nimek.data.anime}\nCharacter : ${nimek.data.character}\n${nimek.data.quote}`
