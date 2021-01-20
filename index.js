@@ -1777,7 +1777,10 @@ case 'donogp':
 				break
 case 'lembrete':
  
- if (!isOwner) return reply(mess.only.ownerB)
+ if (!isUser) return reply(mess.only.userB)
+					if (isBanned) return reply(mess.only.benned)   
+             if (!isUser) return reply(mess.only.userB)
+					if (isBanned) return reply(mess.only.benned)  
 					var gh = body.slice(10)
 					var anu = gh.split("|")[0];
 					var ani = gh.split("|")[1];
