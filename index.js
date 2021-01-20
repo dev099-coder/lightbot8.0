@@ -2263,51 +2263,7 @@ case 'marcareu':
 					}
 					client.sendMessage(from, tag, text, {quoted: mek})
 					break
-case 'report':
-                if (isBanned) return reply(mess.only.benned)    
-				if (!isUser) return reply(mess.only.userB)
-                     const pesan = body.slice(10)
-                      if (pesan.length > 1000) return client.sendMessage(from, 'Desculpe, o texto é muito longo, máximo de 1000 textos', msgType.text, {quoted: mek})
-                        var nomor = mek.participant
-                       const teks1 = `*[RELATÓRIO]*\nNúmero : @${nomor.split("@s.whatsapp.net")[0]}\nmensagem : ${pesan}`
 
-                      var options = {
-                         text: teks1,
-                         contextInfo: {mentionedJid: [nomor]},
-                     }
-                    client.sendMessage('5511946817667@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('Problemas foram relatados ao proprietário do BOT, relatórios falsos não serão respondidos.')
-                    break
-case 'solicitação':
-                    if (isBanned) return reply(mess.only.benned)    
-				if (!isUser) return reply(mess.only.userB)
-                     const cfrr = body.slice(9)
-                      if (cfrr.length > 300) return client.sendMessage(from, 'Desculpe, o texto é muito longo, máximo de 300 textos', msgType.text, {quoted: mek})
-                        var nomor = mek.participant
-                       const ress = `*[REQUEST VITUR]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${cfrr}`
-
-                      var options = {
-                         text: ress,
-                         contextInfo: {mentionedJid: [nomor]},
-                     }
-                    client.sendMessage('5511946817667@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('SUA SOLICITAÇÃO ATINGIU O proprietário do BOT, solicitações falsas / main2 não serão respondidas.')
-                    break
-			 case 'solicitação':
-			if (isBanned) return reply(mess.only.benned)    
-				if (!isUser) return reply(mess.only.userB)
-                     const pesann = body.slice(8)
-                      if (pesan.length > 300) return client.sendMessage(from, 'Desculpe, o texto é muito longo, máximo de 300 tecnologias', msgType.text, {quoted: mek})
-                        var nomor = mek.participant
-                       const teks2 = `*[SOLICITAÇÃO]*\nNúmero : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}`
-
-                      var options = {
-                         text: teks1,
-                         contextInfo: {mentionedJid: [nomor]},
-                     }
-                    client.sendMessage('5511946817667@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('As solicitações foram relatadas ao proprietário do BOT, as solicitações que podem sobrecarregar o proprietário não serão respondidas.')
-                    break
 				case 'printsite':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
