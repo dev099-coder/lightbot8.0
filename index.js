@@ -2606,22 +2606,7 @@ case 'solicitação':
 					nyej = await getBuffer(ori)
 					client.sendMessage(from, nyej, image, { caption: 'itori chan!!', quoted: mek })
 					break
-					case 'dxd':
-				    try {
-					if (isBanned) return reply(mess.only.benned)    
-				if (!isUser) return reply(mess.only.userB)
-					
-						res = await fetchJson(`https://mnazria.herokuapp.com/api/anime?query=dxd`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						 client.sendMessage(from, buffer, image, {quoted: mek, caption: 'gw iri bangsat'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						sa = await getBuffer(`https://i.ibb.co/JcSjmNY/IMG-20210107-WA0052.jpg`)
-						 client.sendMessage(from, sa, image, {quoted: mek, caption: 'ERRO TENTE NOVAMENTE!!'})
-						reply('❌ *ERRO* ❌')
-					}
-					break
-				case 'kurumi':
+                                case 'kurumi':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 					if (!isAnime) return reply('❌ *Deve ativar o modo Anime* ❌')
@@ -2671,28 +2656,17 @@ case 'solicitação':
 					nyec = await getBuffer(ku)
 					client.sendMessage(from, nyec, image, { caption: 'COLI TERUS!!', quoted: mek })
 					break
-				case 'baixarvideoyt':
-
+		          case 'ytmp4':
 				if (!isRegistered) return reply(ind.noregis())
-
 					if (args.length < 1) return reply('Cade o Url?')
-
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.stikga())
-
 					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
-
 					if (anu.error) return reply(anu.error)
-
 					teks = `*Título* : ${anu.title}`
-
 					thumb = await getBuffer(anu.thumb)
-
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-
 					buffer = await getBuffer(anu.result)
-
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
-
 					break
 			case 'infonúmero2':
 			if (isBanned) return reply(mess.only.benned)    
