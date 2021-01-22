@@ -1104,25 +1104,17 @@ async function starts() {
                       buff = await getBuffer(anu.result)
                       client.sendMessage(from, buff, image, {quoted: mek})
                       break
-                         case 'play':
-                reply(mess.wait)
-                anu = await fetchJson(`https://api.vhtear.com/ytmp3?query=${body.slice(6)}&apikey=yourapikey`)
-               if (!isUser) return reply(mess.only.daftarB)
-               if (anu.error) return reply(anu.error)
-                 infomp3 = `*música encontrada!!!*\nTítulo : ${anu.result.title}\nDuração : ${anu.result.duration}\nTamanho : ${anu.result.size}\n\n*ESPERE ENVIANDO POR FAVOR, NÃO SPAM YA PAI*`
-                buffer = await getBuffer(anu.result.thumb)
-                lagu = await getBuffer(anu.result.mp3)
-                client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
-                client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
-                break
-                     case 'infocuaca':
-                   tels = body.slice(11)
-                   anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cuaca?wilayah=${tels}&apikey=BotWeA`, {method: 'get'})
-                   if (!isUser) return reply(mess.only.daftarB)
-                   if (anu.error) return reply(anu.error)
-                   hasil = ` *Tempat : ${anu.tempat}\nCuaca : ${anu.cuaca}\nAngin : ${anu.angin}\nSuhu : ${anu.suhu}\nKelembapan : ${anu.kelembapan}`
-                   client.sendMessage(from, hasil, text, {quoted: mek})
-                   break
+                              case 'play':   
+	          if (!isUser) return reply(mess.only.daftarB)
+					reply(mess.wait)
+					play = body.slice(5)
+					anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
+					if (anu.error) return reply(anu.error)
+					infomp3 = `*MÚSICA ENCONTRADA BY DEV JAVA!!!*\nTítulo : ${anu.result.title}\nFonte : ${anu.result.source}\nTamanho : ${anu.result.size}\n\n*ESPERE ENVIANDO POR FAVOR, NÃO SPAM YA PAI*`buffer = await getBuffer(anu.result.thumbnail)
+					lagu = await getBuffer(anu.result.url_audio)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+					client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
+					break
                               case 'game':
 					anu = await fetchJson(`http://rt-files.000webhostapp.com/tts.php?apikey=rasitech`, {method: 'get'})
                                         if (!isUser) return reply(mess.only.daftarB)
